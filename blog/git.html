@@ -6,23 +6,72 @@
 </head>
 <body>
   <main>
-    <h1>Post Title</h1>
-    <h2>The subtitle, if you want it</h2>
-    <h4>Today's Date</h4>
+    <h1>Getting Started</h1>
+    <h2>Git, Github & The Command Line</h2>
+    <h4>Feb 15, 2016</h4>
   
     <section>
       <p>
-        Your first paragraph goes here. I'm using Web 2.0 Ipsum to add content. Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Nuvvo koofers oooooc voxy klout jaiku palantir flickr insala zinch napster oooj, airbnb mzinga vimeo yuntaa balihoo plickers whrrl edmodo appjet kippt. Yoono imvu hulu eduvant blekko imvu ebay voki napster skype, hipmunk zinch wesabe bubbli ning meebo bitly zlio. Fleck elgg ideeli disqus rovio zillow sifteo blyve jabber, bitly geni zoho foodzie qeyno twones klout jiglu, hipmunk jaiku balihoo plickers heekya eskobo yuntaa. Sococo whrrl plickers movity whrrl zinch voki nuvvo meebo, quora heroku unigo kno wufoo jibjab woopra, groupon yuntaa spock mzinga jumo meebo movity.
+        So, you’re a fresh-faced, soon-to-be developer and you’re ready to start banging out your first lines of code. Maybe you want to rip out a “Hello, World” or a fizzbuzz to get started? Not so fast! The most important thing you can do when you’re first starting out as a code monkey is to get comfortable with your development environment. Until this point, you’ve probably been using a GUI (Graphical User Interface) to get things done on a computer. Mostly you’ve been clicking, dragging and scrolling to use your computer’s services, but there is another way. A better way. A faster way: The command line. 
       </p>
       <p>
-          Lijit groupon ning stypi eskobo blyve ning shopify oooooc, meebo groupon prezi ebay voxy bitly diigo. Spock ifttt skype hipmunk movity whrrl bebo oooj empressr, disqus insala palantir bitly dropio zimbra zinch oooooc etsy, klout spock insala quora omgpop trulia jibjab. Sifteo dogster ebay grockit geni scribd bitly ning unigo, plickers voki mzinga tumblr kaboodle mozy whrrl woopra udemy, foodzie joukuu elgg twitter shopify akismet rovio. Kosmix eduvant woopra dopplr balihoo ning bebo akismet, boxbe vimeo kosmix shopify zappos bitly geni loopt, qeyno disqus sococo squidoo wikia octopart.
+          Your computer’s terminal is the same thing as your regular computer, it gives you access to all of your computer’s same services but instead of having to move your mouse around and navigate through windows to get this done, you use short, concise text commands. In many cases, there are operations that would be quite time consuming if you tried to do them through a GUI, but only take a few lines of Bash. What’s Bash, you ask? Bash is the language that your shell speaks. What is your shell, you ask? Technicalities aside, your shell is your terminal and also is your command line. They are all the same thing. Now open it up and let’s get started! On a mac, open the program called Terminal. On Windows or linux or anything else you well, you google how to use your terminal, because I don’t use those machines and I’m too lazy to figure out how best to access your shell. Plus, you should at Googling things anyway. Google holds all the answers.
       </p>
       <p>
-          Kazaa meevee eduvant gsnap movity kosmix kazaa klout jumo, trulia unigo groupon wakoopa spock knewton glogster heroku oooj, ning imvu appjet eskobo zillow twitter rovio. Glogster chegg voxy greplin dopplr voki foodzie xobni weebly odeo, sococo zynga knewton loopt palantir lala blyve tumblr blekko, twones akismet plaxo kippt meebo zillow zooomr insala. Oovoo imeem napster divvyshot zinch imeem voxy shopify, fleck kazaa zinch lanyrd boxbe joost wakoopa nuvvo, orkut elgg heekya sifteo scribd napster. Yammer yoono groupon dopplr cloudera nuvvo eduvant klout, voxy groupon disqus eduvant oooj greplin.
+          Awesome! Now you’re in your terminal and you can start talking to your computer. It should look like you’re using a computer from the early 90s.
       </p>
-  
-        <!-- copy and paste as many sections as you want to add paragraphs -->
-      </section>
+      <p>
+        <ul>
+            <li>Type pwd. This stands for “print working directory” and it will give you a filepath to the directory you’re in. It’s probably something like Users/yourusername. Cool, that’s where you are. Quick aside, a directory is the same as a folder.</li>
+            <li>Type ls. This lists all of the folders or files that are in your working directory. You probably have a folder called Desktop, Application, Downloads.</li>
+            <li>OK, I want to start working on a new folder in my Desktop.</li>
+            <li>Type cd Desktop. This stands for Change Directory and the name that comes after it is the directory you want to navigate to. Using cd this way, you can’t jump around from any folder to any other folder. You can only move down the folder tree to one of the folder’s children.</li>
+            <li>Type cd .. , this will navigate you up the folder tree one folder. Now type in cd Des but before you finish typing desktop, hit the tab key. DId you see it finish the word for you? This is called tab completion and it’s handy because it’s fast and also shows you which folders you can navigate to.</li>
+            <li>Now that you’re in your Desktop folder we want to start a new project. We’ll call it, my_first_project.</li>
+            <li>mkdir my_first_project. mkdir stands for Make Directory and then you tell it what you want that directory to be called.</li>
+            <li>cd my_first_project, to move into that folder.</li>
+            <li>touch hello_world.html. Touch creates an empty file. </li>
+            <li>You now have all of the basics you need for moving around your computer in terminal and creating new folders and files! </li>
+        </ul>
+      </p>
+      <p>
+        You might be thinking, this isn’t faster, this is a lot lot slower! Give it some time. You’ve probably been using a GUI for many years and the terminal is probably very new to you. Once you get over the learning curve, the terminal will speed up your development time immensely.
+     </p>
+     <p>
+     Now that you’ve set up your first working folder, it’s time to start using Git. Git is a version control system that saves a version of your working directory (also called repository in git world, I know so many names for the same thing) at a certain point in time. You save these versions by making a commit. A commit is a save point. It is a snapshot of the codebase at a specific point in time. Once saved, git offers features to: rollback to that point in time, merge or rebase two saved versions together, navigate through different saved states or sync local changes with a remote repository to name just a few. It’s a good habit to make commits often, and an even better habit to make a commit after every time you create a piece of working code, committing broken code is not ideal. When programming, it’s easy to really mess things up. Git offers you the ability to go back to a point in time when your code was working and start fresh from there.
+     </p>
+     <p>
+       <ul>
+         <li>You may already have git installed. To check, run git --version in your terminal. If you see a git version, great! If not, Google how to install git on your machine and install it.</li>
+         <li>Go back to terminal. If you aren’t already in my_first_project, use the commands you learned to navigate inside of it. If you ls, you should see hello_world.html and that’s it.</li>
+         <li>git init. This starts up git on your repository. This installs a hidden folder called .git in my_first_project that will do all of the magic for you.</li>
+         <li>git status. This will tell you the status of your repository. RIght now you should see that there are untracked changes to hello_world.html</li>
+         <li>git add -A. This will add hello_world.html to your staging area, this is saying that you are ready to commit.</li>
+         <li>git commit -m “first commit for my first project”. This creates a save point. You have to write a message with your save point, that’s what the -m flag does. These messages are short concise statements that tell you what is happening in the commit.</li>
+       </ul>
+     </p>
+     <p>
+       Great! You’ve saved your code! But what happens if your computer accidentally explodes? Github to the rescue! Github is your remote repository, remote meaning on someone else’s computer, not yours. It allows you to save your work in the cloud and collaborate with other people who are also doing the same thing. 
+     </p>
+     <p>
+       <ul>
+         <li>First set up a github account if you don’t have one already.</li>
+         <li>Now, select the plus symbol on the top righthand side of the screen and select “New repository.”</li>
+         <li>Now follow the steps and create a repository called my_first_project. </li>
+         <li>Once that’s created, grab the url next to the http drop starting with http://github.com/...</li>
+         <li>Go back to terminal and in your working directory type git remote add origin [the url you just grabbed]. It may ask you to provide your login credentials.</li>
+         <li>Now your local repo is connected to your remote repo.</li>
+         <li>Now you want to save the changes up to the cloud for safe keeping and sharing.</li>
+         <li>git push origin master. This will push the last commit up to the cloud.</li>
+       </ul>
+     </p>
+     <p>
+       And there you have all of your working code stored in the cloud! This is a simplistic example but there are lots more things you can do with git and Github. People who work on teams use git clone to get a repository, git pull to update their local repo, pull requests are also used for submitting code for review so feature branches can be merged with the master branch. Git allows you to fork code merge or rebase depending on your team’s development style. If you’re curious about any of this, Google “best git tutorial” or “best github tutorial” and go from their.
+     </p>
+     <p>
+       With this knowledge, you are now ready to start coding! Your code will be safe and your efficiency will be high with knowledge of the command line, git and github. 
+     </p>
+    </section>
     </main>
   </body>
 </html>
