@@ -20,6 +20,7 @@
     p {
     	font-family: Helvetica, sans-serif;
     	color: #212121;
+    	text-align: justify;
     }
 		header {
 			display: block;
@@ -41,7 +42,7 @@
 		nav {
 			display: block;
 			position: fixed;
-			left: 7%;
+			left: 10%;
 			top: 7%;
 		}
 		nav a {
@@ -53,7 +54,7 @@
 		}
 
 		nav a:hover {
-		  color: #FFB74D;
+		  color: #FF9800;
 		}
 		.card {
 			display: block;
@@ -90,4 +91,5 @@
 			float: left;
 			height: 110%;
 			margin-left: 1%;
+
 		}
