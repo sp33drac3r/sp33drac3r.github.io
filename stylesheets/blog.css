@@ -1,0 +1,15 @@
+/*
+- health insurance
+- mail
+
+*/
+
+.blog-image {
+	position: static;
+	width: 100%;
+	height: auto;
+}
+
+ul li:nth-child(even) {
+	color: blue;
+}
