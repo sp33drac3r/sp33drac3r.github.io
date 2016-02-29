@@ -2,7 +2,8 @@
       margin: 0;
       border: 0;
       padding: 0;
-      font: inherit;
+      font-family: Helvetica, sans-serif;
+      color: #212121;
       text-align: inherit;
       text-decoration: inherit;
       color: inherit;
@@ -10,18 +11,23 @@
     }
     body {
     	background-color: #F5F5F5;
-    	height: 1000px;
     }
     h1 {
     	font-size: 2.2em;
-    	font-family: Helvetica, sans-serif;
+    	color: #212121;
+    }
+    h2 {
+    	font-size: 1.5em;
     	color: #212121;
     }
     p {
-    	font-family: Helvetica, sans-serif;
     	color: #212121;
     	text-align: justify;
     	hyphens: auto;
+    }
+    li {
+    	font-family: Helvetica, sans-serif;
+    	color: #212121;
     }
 		header {
 			display: block;
@@ -40,7 +46,7 @@
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 -1px -2px rgba(0,0,0,0.24);
 			bottom: 0;
 			height: 10%;
-			width: 100%
+			width: 100%;
 		}
 		nav {
 			display: block;
@@ -61,25 +67,18 @@
 		}
 		.card {
 			display: block;
-			position: absolute;
-			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-			transition: all 0.2s ease-in-out;
-			padding: 1%;
+			position: relative;
+			padding: 2%;
 			background-color: #FAFAFA;
 			width: 60%;
-			height: 80%;
-			top: 20%;
-			left: 20%;		
+			height: auto;
+			top: 100px;
+			left: 20%;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			transition: all 0.2s ease-in-out;	
 		}
 		.card:hover {
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		}
-		.card-text {
-			display: block;
-			position: absolute;
-			right: 1em;
-			width: 65%;
-			clear: right;
 		}
 		.social-links {
 			display: block;
@@ -95,7 +94,6 @@
 			float: left;
 			height: 250px;
 			margin: 1em;
-			border-radius: 50%;
 		}
 		#riley-logo{
 			display: block;

@@ -1,12 +1,13 @@
   h2 {
-    	font-size: 1.5em;
-    	font-family: Helvetica, sans-serif;
+    	font-size: 1.2em;
     	color: white;
  }
   h3 {
     	font-size: 1em;
-    	font-family: Helvetica, sans-serif;
     	color: white;
+ }
+ h4 {
+    	font-size: 1em;
  }
  article {
  	    display: block;
@@ -16,7 +17,7 @@
 			padding: 1%;
 			background-color: #FAFAFA;
 			width: 300px;
-			height: 300px;
+			height: 230px;
  }
  article:hover {
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -40,8 +41,9 @@
 			right: 10%;		
 }
 .blog-image {
-	position: static;
-	width: 100%;
+	position: relative;
+	width: 90%;
 	height: auto;
+	margin: 0, auto;
 }
 
