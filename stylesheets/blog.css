@@ -1,15 +1,47 @@
-/*
-- health insurance
-- mail
-
-*/
-
+  h2 {
+    	font-size: 1.5em;
+    	font-family: Helvetica, sans-serif;
+    	color: white;
+ }
+  h3 {
+    	font-size: 1em;
+    	font-family: Helvetica, sans-serif;
+    	color: white;
+ }
+ article {
+ 	    display: block;
+			position: absolute;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			transition: all 0.2s ease-in-out;
+			padding: 1%;
+			background-color: #FAFAFA;
+			width: 300px;
+			height: 300px;
+ }
+ article:hover {
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.blog-title{
+	display: block;
+	width: 100%;
+	background-color: #607D8B;
+	padding: 7px;
+}
+.small-card1 {
+			top: 20%;
+			left: 10%;		
+}
+.small-card2 {
+	    top: 20%;
+			left: 38%;
+}
+.small-card3 {
+			top: 20%;
+			right: 10%;		
+}
 .blog-image {
 	position: static;
 	width: 100%;
 	height: auto;
 }
 
-ul li:nth-child(even) {
-	color: blue;
-}
