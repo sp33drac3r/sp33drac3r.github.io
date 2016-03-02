@@ -1,3 +1,5 @@
+/* TO DO
+ - add media queries*/
  html, head, body, header, footer, h1, h2, h3, h4, h5, h6, li{
       margin: 0;
       border: 0;
@@ -11,6 +13,7 @@
     }
     body {
     	background-color: #F5F5F5;
+    	padding-bottom: 20%
     }
     h1 {
     	font-size: 2.2em;
@@ -23,7 +26,6 @@
     p {
     	color: #212121;
     	text-align: justify;
-    	hyphens: auto;
     }
     li {
     	font-family: Helvetica, sans-serif;
@@ -47,6 +49,7 @@
 			bottom: 0;
 			height: 10%;
 			width: 100%;
+			clear: both;
 		}
 		nav {
 			display: block;
