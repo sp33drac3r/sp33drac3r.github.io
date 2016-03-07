@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+<body>
+	<header>
+		<div class="page_options">
+		</div>
+		<img src="../imgs/riley_works_logo.png" id="riley-logo">
+		<nav>
+			<a href="http://sp33drac3r.github.io">about me</a>
+			<a href="#">projects</a>
+			<a href="#">contact</a>
+			<a href="http://sp33drac3r.github.io/blog.html">blog</a>
+			<a href="#">resume</a>
+		</nav>
+	</header>
+	<article class="card">
+	  <main>
+	  <h1>Abstract Data Types</h1>
+    <h4>Arrays and Hashes</h4>
+    <h5>March 7, 2016</h5>
+	    <p>So, you need to store a collection of things. Maybe it’s a list of numbers 1 to 100 or maybe it’s a list of all of the countries in the world and their associated capitals. You know that the equals operator creates assignment so maybe your list could look like this:
+
+			listitem1 = 1
+			listitem2 = 2
+			listitem3 = 3
+			listitem4 = 4
+
+			OR
+
+			United_States = “District of Columbia”
+			Peru = “Lima”
+			Mozambique = “Maputo”
+
+			Egad. What a mess. It shouldn’t be hard to tell that this is not the best way to go about making lists or creating key value pairs. For one thing, there is no built in way to search through this structure. You would have to build custom search and sort methods for every different type of collection. There is no way to get at the value from the key and there is no off the shelf method that allows you to easily add, update items in the collection.
+
+			Luckily, Ruby (like all general purpose programming languages) comes with two very useful data-types that will help you store these kinds of collections. Enter, Arrays and Hashes!
+
+			Arrays are just a long list of comma separated values. The elements can be numbers or strings. They can also be interior arrays or even an hash inside of an array, though there are specific use cases for these nested structures.
+
+			An array is defined with square brackets and comma separated values. Thusly:
+
+			A list of strings
+			list_of_favorite_rappers = [“Jay Z”, “2 Chainz”, “Young Thug”, “Nas”]
+			A list of numbers (... is shorthand for “up to.” In this case, it is all numbers between 1 and 100 inclusive)
+			numbers_1_to_100 = [1...100]
+			An array of arrays
+			three_by_three_identity_matrix = [[1,0,0],[0,1,0],[0,0,1]]
+
+			Try it out! Make some arrays. 
+
+			One of the most handy properties of an array is that it gives you access to the position of the elements in your array. For instance, if you wanted to get the zeroth element of my list of favorite rappers, list_of_favorite_rappers[0] will return “Jay Z.” You can also change my list of favorite rappers list so, list_of_favorite_rappers[1] = “Too Short”. Now this list looks like this: [“Jay Z”, “Too Short”, “Young Thug”, “Nas”]. Note: for very important but also slightly complicated reasons, indices always start at 0, not 1 (this is true is all major computer programming languages).
+
+			Great, now we have a way to accessing elements by their index and setting elements at their index. Wouldn’t it be nice if we could iterate through the list and do something to every element in the list? The great thing about arrays is they are Enumerables in Ruby, giving us access to the enumerable mixin. This mixin gives the user access to enumerable methods that are really useful for enumerating through the list. 
+
+			First, let’s consider .each. some_array.each takes a block and does something to every element on that array. The return value of .each is the original, unmodified array. Let’s take a look at an example:
+
+			name = [“Jenny”, “Bobby”, “Tammy”, “Brady”, “Lana”, “Jimmy”, “Tommy”, “Ben”]
+
+			names.each do |name|
+			  puts “Hi, #{name}!”
+			end
+
+			This will loop through every element in the list saying hi to all of the people in the names list. Useful enumerables are .map, .inject, .join, include?, .any?, .all?, .sort, .min, .max. 
+
+			An important programming construct is to initialize (create) an empty array that you can add stuff into later.
+
+			new_array = []
+			new_array = Array.new
+
+			These are two ways to accomplish this in Ruby, the first being slightly preferred. One way to think about an array is as a set of key/value pairs, where the key is the index and the value is the value at that index. It is a special key/value pair relationship because the keys are ordered and unchangeable. Another data type with key/value pair relationships is the hash.
+
+			Hashes
+			If arrays are useful, hashes are indispensable. A hash is an unordered list of key/value pairs, although in newer versions of Ruby, it is technically ordered. Like an array, Ruby hashes have access to the Enumerable mixin and get all of it’s same methods. Here’s how a hash is structured.
+
+			my_color_feelings = {
+				blue: “love it”,
+				green: “love it most”,
+				brown: “meh”,
+				gold: “hate it”,
+				black: “love it”,
+			}
+
+			You will also see hashes with syntax like this:
+
+			 my_color_feelings = {
+				:blue => “love it”,
+				:green => “love it”,
+				:brown => “meh”,
+				:gold => “hate it”,
+				:black => “love it”,
+			}
+
+			In the second example above, I used symbols (e.g. :blue) for the keys, but you could also use a string. The important thing to know about hashes is that the keys have to be unique.
+
+			There are some important things to know about hash defaults. Similar to the new_array = Array.new, a new hash can be created by calling Hash.new. There are some other interesting hash defaults that offer some powerful capabilities but we’ll save those for another post.
+
+			Let’s say we need to retrieve a value from a key from my_color_feelings.
+			my_color_feelings[:blue]
+			will return “love it”.
+
+			You can do assignment the same way as before
+			my_color_feelings[:blue] = “literally the best color”
+
+			The resulting hash will look like this:
+			 my_color_feelings = {
+				:blue => “literally the best color”,
+				:green => “love it”,
+				:brown => “meh”,
+				:gold => “hate it”,
+				:black => “love it”,
+			}
+
+			Some other important methods that are only available on hashes are .keys and .values, which return all of the keys and values in a hash respectively.
+
+			Hashes have access to the same set of Enumerable methods that the mixin class supplies to arrays though you have to call them slightly different than when you call them for an array, usually requiring both a key and value designation even if the value you designate is _ which more or less means ignore this value and just return the other one.
+
+			Hashes are an indispensable part of programming, they are infinitely useful.</p>
+	</article>
+
+	<footer>
+		<a href="mailto:riley.k.scheid@gmail.com" target="_blank"><img class="social-links" src="../imgs/email.png" alt="email"></a>
+		<a href="tel:4157355151"><img class="social-links" src="../imgs/phone.png" alt="phone"></a>
+    <a href="http://www.github.com/sp33drac3r" target="_blank"><img class="social-links" src="../imgs/github.png" alt="github"></a>
+    <a href="http://www.linkedin.com/in/rileyscheid" target="_blank"><img class="social-links" src="../imgs/linkedin.png" alt="linkedin"></a>
+	</footer>
+</body>
+</html>
