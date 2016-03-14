@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+<body>
+	<header>
+		<div class="page_options">
+		</div>
+		<img src="../imgs/riley_works_logo.png" id="riley-logo">
+		<nav>
+			<a href="http://sp33drac3r.github.io">about me</a>
+			<a href="#">projects</a>
+			<a href="#">contact</a>
+			<a href="http://sp33drac3r.github.io/blog.html">blog</a>
+			<a href="#">resume</a>
+		</nav>
+	</header>
+	<article class="card">
+	  <main>
+	</article>
+	<main>
+	  <h1>Enumerable#inject</h1>
+    <h4>Learning to Love It</h4>
+    <h5>Mar 14, 2016</h5>
+	<p>
+
+		The first time I saw the Ruby .inject method, the resource that I was reading noted (note: this could also be achieved in a simple .each loop). That was enough for me, never again will I need to use or know how to use .inject, I thought! Enumerable#inject keeps coming up though and I’ve seen many seasoned Rubyists use it in stackoverflow answers. So, I finally sat down to figure out how .inject works and why it’s so useful.
+
+		As with all ruby methods, the best place to start is with the ruby docs. Below is the ruby doc text for inject in it’s entirety. You’ll see why I wasn’t champing at the bit to use inject after I read what it did. Frankly, I didn’t really understand it. Read through it though to get a clinical definition and then we’ll walk through each part step by step.
+
+		inject(initial, sym) → obj
+		inject(sym) → obj
+		inject(initial) { |memo, obj| block } → obj
+		inject { |memo, obj| block } → obj
+		Combines all elements of enum by applying a binary operation, specified by a block or a symbol that names a method or operator.
+		If you specify a block, then for each element in enum the block is passed an accumulator value (memo) and the element. If you specify a symbol instead, then each element in the collection will be passed to the named method of memo. In either case, the result becomes the new value for memo. At the end of the iteration, the final value of memo is the return value for the method.
+		If you do not explicitly specify an initial value for memo, then the first element of collection is used as the initial value of memo.
+		OK, so what does this all mean? The easiest case to understand is the last case where a block is called on inject..
+
+		Let exaple_array = [1, 2, 3, 4, 5, 6, 7]
+
+		example_array.inject(1) { |accum, num| accum + num }
+
+		Reading this from left to right, inject is passed an argument, 1. This is the starting value for the accumulation. The block then defines an accumulator name and the name for each element that we are going to iterate over. In this example I call the accumulator value, accum, and each element in the array, num. 
+
+		Since the accumulator is set to 1, our first operation is 1 + 1, accumulator + the first number in our array. The accumulator is then updated to a new value, the result of the first operation. Since the result of the first operation was 2, the accumulator is now 2 so the second operation is 2 + 2, the result of the first + the second value in the array. The complete inject operation is as follows:
+
+		1(argument passed to inject) + 1(first element) = 2
+		2(accumulator) + 2(second element) = 4
+		4(accumulator) + 3(third element) = 7
+		7(accumulator) + 4(fourth element) = 11
+		11(accumulator) + 5(fifth element) = 16
+		16(accumulator) + 6(sixth element) = 22
+		22(accumulator) + 7(seventh element) = 29
+
+		Since the 7th element is the last element, the result of this operation is 29. If nothing is passed as an argument to the inject method, the default accumulator is the first element in the array. So, example_array.inject { |accum, num| accum + num } would return 28 because the first operation would be 1 + 2 instead of 1 + 1 and there would be 1 fewer total accumulation summations. 
+
+		Inject can also take a symbol (either :+, :-, :* or :/) just syntactic sugar to save you a few keystrokes, so you don’t need to pass a block.
+
+		example_array.inject(:+) is the same as example_array.inject {|accum, num| accum + num}
+		example_array.inject(:*) is the same as example_array.inject {|accum, num| accum * num}
+		and so forth.
+
+		So far, you’re probably thinking that inject is a neat trick and a nice way to save a few lines of code, so why do rubyists like it so much? It turns out, Enumerable#inject is great for building an object from another object when you need to do it one step at a time.
+
+		It’s a bit of a contrived example, but let’s say you have an array of all of the years where a person of Irish descent won an academy award for best supporting actor or actress and you only want to include even, for some strange reasons. What you needs is a list that looks like this:
+		[“1922”, “1942”, “1946”, “1948”, “1974”, etc]
+		What you have, however, is this:
+		irish_actors = [21, 22, 33, 39, 42, 43, 45, 46, 48, 74, etc]
+
+		You could either do this in a few different loops, using .select, .collect and some string interpolation or you can do it all in one step like so:
+
+		irish_actors.inject([]) do |actor_list, year|
+		  actor_list << “19” + year.to_s if year.even?
+		end
+
+		The accumulator in this example is a new empty array that you can add to conditionally, including any additional alterations you might be interested in.
+
+		Let’s say you have an array and you want to turn it into a hash. Imagine some stupid api gave you data that looked like this
+
+		Note: each_with_object will also solve this problem nicely. Go learn about each_with_object.
+	</p>
+
+	<footer>
+		<a href="mailto:riley.k.scheid@gmail.com" target="_blank"><img class="social-links" src="../imgs/email.png" alt="email"></a>
+		<a href="tel:4157355151"><img class="social-links" src="../imgs/phone.png" alt="phone"></a>
+    <a href="http://www.github.com/sp33drac3r" target="_blank"><img class="social-links" src="../imgs/github.png" alt="github"></a>
+    <a href="http://www.linkedin.com/in/rileyscheid" target="_blank"><img class="social-links" src="../imgs/linkedin.png" alt="linkedin"></a>
+	</footer>
+</body>
+</html>
