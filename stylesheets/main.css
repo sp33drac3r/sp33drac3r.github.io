@@ -52,9 +52,12 @@ header {
 }
 
 a {
-  font-size: 0.9em;
 	text-decoration: none;
   color: inherit;
+}
+
+.technologies {
+  font-size: 0.9em;
 }
 
 a:hover {
